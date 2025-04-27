@@ -2,25 +2,67 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Translation Chat App</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Translation Chat</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="styles.css">
     <script src="/socket.io/socket.io.js"></script>
 </head>
 <body>
-    <div class="chat-container">
+    <div class="whatsapp-container">
         <div class="chat-header">
-            <h1>Translation Chat</h1>
-            <select id="languageSelector">
-                <option value="english">English</option>
-                <option value="spanish">Spanish</option>
-                <option value="french">French</option>
-            </select>
+            <div class="header-container">
+                <div class="header-left">
+                    <div class="back-button">
+                        <i class="fas fa-arrow-left"></i>
+                    </div>
+                    <div class="user-info">
+                        <div class="user-avatar">
+                            <img src="1.jpg" alt="Chat Avatar">
+                        </div>
+                        <div class="user-details">
+                            <h2>Translation Chat</h2>
+                            <p>Active now</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="header-actions">
+                    <div class="language-selector">
+                        <div class="custom-select">
+                            <select id="languageSelector">
+                                <option value="english">English</option>
+                                <option value="tamil">தமிழ் (Tamil)</option>
+                            </select>
+                            <div class="select-arrow"></div>
+                        </div>
+                    </div>
+                    <div class="header-icons">
+                        <div class="theme-toggle" id="themeToggle">
+                            <i class="fas fa-moon"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="messages" id="messages"></div>
-        <div class="input-area">
-            <input type="text" id="messageInput" placeholder="Type a message...">
-            <button id="sendButton">Send</button>
+
+        <div class="chat-background">
+            <div class="messages" id="messages"></div>
+        </div>
+
+        <div class="message-input-area">
+            <div class="input-actions">
+                <i class="far fa-smile"></i>
+                <i class="fas fa-paperclip"></i>
+            </div>
+            <div class="input-container">
+                <input type="text" id="messageInput" placeholder="Type a message">
+            </div>
+            <div class="send-actions">
+                <button id="sendButton">
+                    <i class="fas fa-microphone"></i>
+                    <i class="fas fa-paper-plane" style="display:none;"></i>
+                </button>
+            </div>
         </div>
     </div>
 
